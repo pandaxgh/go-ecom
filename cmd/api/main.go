@@ -5,10 +5,12 @@ import (
 
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/pandaxgh/ecom-backend/internal/config"
+	"github.com/pandaxgh/ecom-backend/internal/database"
 )
 
 func main() {
 	fmt.Println("hey there")
 	cfg := config.Load()
-	fmt.Println(cfg)
+	db := database.Connect(cfg.DB.URL)
+	defer db.Pool.Close()
 }
