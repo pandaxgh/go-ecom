@@ -7,6 +7,7 @@ import (
 
 func Login(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Login Endpoint")
+
 }
 
 func Signup(w http.ResponseWriter, r *http.Request) {
